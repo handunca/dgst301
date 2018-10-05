@@ -1,0 +1,38 @@
+import random
+import pycorpora
+import pronouncing
+def nouns():
+
+    subject = pronouncing.rhymes("cow")
+    place = pronouncing.rhymes("town")
+    subjectrhyme = pronouncing.rhymes("round")
+
+    subject2 = pronouncing.rhymes("dog")
+    place2 = pronouncing.rhymes("fog")
+    subjectrhyme2 = pronouncing.rhymes("log")
+
+    nounList1 = [subject,place,subjectrhyme]
+    nounList2 = [subject2,place2,subjectrhyme2]
+    nounsList = [nounList1, nounList2]
+    randomPick = random.choice(nounsList)
+
+    return randomPick
+
+verbs = ["walked","ran","rolled","biked","crawled",
+        "skipped", "drove", "hopped", "jogged"]
+
+
+chosen_list = nouns()
+
+
+
+subj = random.choice(chosen_list[0])
+obj = random.choice(chosen_list[1])
+rhyme_word = random.choice(chosen_list[2])
+verb = random.choice(verbs)
+
+poem = """
+    The {} {} in the {}
+    But then it {}
+"""
+print(poem.format(subj, verb, obj, rhyme_word))
