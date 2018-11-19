@@ -1,0 +1,26 @@
+import random
+import dominate
+from dominate.tags import *
+import pdfkit
+
+novel = 'beef'
+
+for i in range(50000):
+    novel += " beef";
+    
+    r = random.randint(0,100)
+
+    if (r < 10):
+        novel += random.choice([".","?","!"])
+        novel += " Beef"
+    else:
+        novel += " beef"
+    
+    if(r < 6):
+        novel += random.choice([".","?","!"])
+        novel += "\n\nBeef"
+        
+novel += "\n\nBEEF"
+
+with open('beefing.txt', 'w') as f:
+    f.write(novel)
